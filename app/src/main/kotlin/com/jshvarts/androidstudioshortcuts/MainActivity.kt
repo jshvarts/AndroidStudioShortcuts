@@ -3,15 +3,16 @@ package com.jshvarts.androidstudioshortcuts
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.Toolbar
+import android.view.Menu
 import android.view.MenuItem
 import android.view.ViewGroup
 import android.widget.TextSwitcher
+import android.widget.Toast
 import butterknife.BindString
 import butterknife.BindView
 import butterknife.ButterKnife
 import com.bluelinelabs.conductor.*
 import com.jshvarts.androidstudioshortcuts.allshortcuts.AllShortcutsViewImpl
-import com.jshvarts.androidstudioshortcuts.R
 import com.jshvarts.androidstudioshortcuts.app.ShortcutsApp
 import com.jshvarts.androidstudioshortcuts.screenbundle.BundleFactory
 import com.jshvarts.androidstudioshortcuts.screenbundle.ScreenBundleHelper
@@ -76,7 +77,22 @@ class MainActivity : AppCompatActivity() {
         if (item.itemId == android.R.id.home) {
             onBackPressed()
             return true
+        } else if (item.itemId == R.id.search) {
+            Toast.makeText(this, R.string.search_not_implemented, Toast.LENGTH_SHORT).show()
+            return true
         }
         return super.onOptionsItemSelected(item)
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.options_menu, menu)
+        fun setupSearch() {
+            // Associate searchable configuration with the SearchView
+            //val searchManager = getSystemService(Context.SEARCH_SERVICE) as SearchManager
+            //val searchView = menu!!.findItem(R.id.search).actionView as SearchView
+            //searchView.setSearchableInfo(searchManager.getSearchableInfo(componentName))
+        }
+        setupSearch()
+        return true
     }
 }
