@@ -13,7 +13,7 @@
     <TextView
         android:id="@android:id/text1"
         android:layout_width="0dp"
-        android:layout_weight=".5"
+        android:layout_weight=".6"
         android:layout_height="wrap_content"
         android:ellipsize="end"
         android:maxLines="1"
@@ -23,7 +23,7 @@
     <TextView
         android:id="@android:id/text2"
         android:layout_width="0dp"
-        android:layout_weight=".5"
+        android:layout_weight=".4"
         android:layout_height="wrap_content"
         android:layout_marginLeft="@dimen/adapter_item_keys_textview_margin_left"
         android:gravity="center_vertical"

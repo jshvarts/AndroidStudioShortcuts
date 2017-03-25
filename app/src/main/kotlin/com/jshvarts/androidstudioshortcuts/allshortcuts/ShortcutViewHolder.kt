@@ -51,12 +51,7 @@ class ShortcutViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
     private fun formatKeys() {
         val spannable = SpannableString(keysView.text)
-        spannable.split("+").forEach {
-            spannable.setSpan(BackgroundColorSpan(R.color.colorShortcutKeysBackground),
-                    spannable.indexOf(it), spannable.indexOf(it)+it.length,
-                    Spanned.SPAN_EXCLUSIVE_EXCLUSIVE)
-            TextUtils.concat(spannable, "+")
-        }
+        spannable.setSpan(BackgroundColorSpan(R.color.colorShortcutKeysBackground), 0, spannable.length, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE)
         keysView.text = spannable
     }
 }
